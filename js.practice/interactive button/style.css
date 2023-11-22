@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#btn{
+    padding: 10px 18px;
+    margin: 50px 50px;
+    outline: none;
+    border: none;
+    background-color: pink;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+#btn:hover{
+    cursor: pointer;
+    background-color: rgb(242, 159, 173);
+    border: 1px solid palevioletred;
+}
+
+.text{
+    border: 2px solid blue;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+    margin: 50px 250px;
+    padding: 10px;
+}

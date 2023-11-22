@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Picture</title>
+</head>
+<body>
+
+<h2>Upload a Picture</h2>
+
+<input type="file" id="fileInput">
+<button onclick="upload()">Upload</button>
+
+<div id="imageContainer"></div>
+
+<script>
+function upload(){
+    let fileInput = document.getElementById('fileInput');
+    let file = fileInput.files[0];
+    let imageContainer = document.getElementById('imageContainer');
+
+    let reader = new FileReader();
+
+    reader.onload = function(e){
+        var img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.maxWidth = '300px';
+        img.style.maxHeight = '300px';
+        imageContainer.appendChild(img);
+    }
+
+    reader.readAsDataURL(file);
+}
+</script>
+
+</body>
+</html>

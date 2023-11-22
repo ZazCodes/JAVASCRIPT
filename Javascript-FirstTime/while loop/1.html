@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// let num;
+
+// do {
+//   num = prompt("Enter a number greater than 100?", 0);
+// } while (num <= 100 && num);
+
+const n = prompt("enter number to continue") // You can change this value to any desired n
+
+for (let num = 2; num <= n; num++) {
+  let isPrime = true;
+
+  for (let divisor = 2; divisor < num; divisor++) {
+    if (num % divisor === 0) {
+      isPrime = false;
+      alert(`non-prime numbers are ${num}`);
+      break;
+    }
+  }
+
+  if (isPrime) {
+    alert(`prime numbers are ${num}`);
+  }
+}
+
+
+
+// do{
+// input= parseInt(prompt("Number greater than 100"));
+
+// }while(input<=100)
+
+
+
+    </script>
+</body>
+</html>

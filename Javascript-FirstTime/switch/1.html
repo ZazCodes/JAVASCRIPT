@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// let browser = 'Firefox';
+//         switch (browser) {
+//     case 'Edge':
+//     alert( "You've got the Edge!" );
+//     break;
+
+//     case 'Chrome':
+//     case 'Firefox':
+//     case 'Safari':
+//     case 'Opera':
+//     alert( 'Okay we support these browsers too' );
+//     break;
+
+//     default:
+//     alert( 'We hope that this page looks ok!' );
+// }
+
+// let user = prompt("enter your browser name");
+// if (user == "edge"){
+//     alert( "You've got the Edge!" );
+// }
+// else if (user == "chrome" || "firefox" || "safari"){
+//     alert( 'Okay we support these browsers too' );
+// }
+
+// else{
+//     alert( 'We hope that this page looks ok!' );
+
+// }
+
+
+// let a = +prompt('a?', '');
+
+// if (a == 0) {
+//   alert( 0 );
+// }
+// if (a == 1) {
+//   alert( 1 );
+// }
+
+// if (a == 2 || a == 3) {
+//   alert( '2,3' );
+// }
+
+// let num = parseInt(prompt("enter your num"))
+// switch(num){
+//     case 0:
+//         alert("0");
+//         break;
+//     case 1:
+//         alert("1");
+//         break;
+//     case 2:
+//     case 3:
+//         alert("2,3");
+// }
+
+let response;
+let score = parseInt(prompt("enter score"));
+let machineActive = true;
+
+if (machineActive) {
+  // Add your code here
+  switch (true) {
+    case score < 0 || score > 100:
+      response = 'This is not possible, an error has occurred.';
+      break;
+
+    case score >= 0 && score <= 19:
+      response = 'This is not possible, an error has occurred.';
+      break;
+
+    case score >= 20 && score <= 39:
+      response = 'You know some things, but it\'s a pretty bad score. Needs improvement';
+      break;
+
+    case score >= 40 && score <= 69:
+      response = 'You did a passable job, not bad!';
+      break;
+
+    case score >= 70 && score <= 89:
+      response = 'That\'s a great score, you really know your stuff.';
+      break;
+
+    default:
+      response = 'What an amazing score! Did you cheat? Are you for real?';
+      break;
+  }
+} else {
+  response = 'The machine is turned off. Turn it on to process your score.';
+}
+
+console.log(response);
+
+
+    </script>
+</body>
+</html>

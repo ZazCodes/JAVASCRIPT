@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #212121;
+}
+
+.image{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+#preBtn{
+    padding: 8px 15px;
+    font-size: 15px;
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    background-color: pink;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#preBtn:hover{
+    background-color: rgb(246, 162, 176);
+}
+
+#nexBtn{
+    padding: 8px 28px;
+    font-size: 15px;
+    position: absolute;
+    top: 80%;
+    right: 20%;
+    background-color: pink;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#nexBtn:hover{
+    background-color: rgb(246, 162, 176);
+}

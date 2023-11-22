@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <form action="">
+    
+        <span>Height : </span>
+        <input class="height" type="text" placeholder="Enter Your Height" >
+       
+       <div>
+        <span>Weight : </span>
+        <input type="text" class="weight" placeholder="Enter Your Weight" >
+       
+        <span class="result"></span>
+       <br><br>
+       <button>Check Result</button>
+    </form>
+</body>
+
+<script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit", function(e){
+       e.preventDefault();
+
+       let height = parseInt(document.querySelector(".height").value);
+       let Weight = parseInt(document.querySelector(".weight").value);
+
+       let result = document.querySelector(".result");
+
+       
+       const BMI = (Weight / ((height*height)/10000)).toFixed(2);
+
+       if( height <= 0 || height === "" || isNaN(height)){
+        result.innerHTML = `please enter correct height ${height}`;
+       }
+       else if( Weight <= 0 || Weight === "" || isNaN(Weight)){
+        result.innerHTML = `please enter correct weight ${Weight}`;
+       }
+       else if(BMI > 50){
+       result.innerHTML = `<span>${BMI}</span>`;
+       result.innerHTML = "Good Posture";
+       }
+       else if(BMI < 50){
+        result.innerHTML = `<span>${BMI}</span>`;
+        result.innerHTML = "Nice but not good";
+       }
+       else if(BMI > 70){
+        result.innerHTML = `<span>${BMI}</span>`;
+        result.innerHTML = "poor over weight";
+       }else{
+        result.innerHTML = `<span>${BMI}</span>`;
+        result.innerHTML = "you weak cunt"
+       }
+    });
+    
+</script>
+</html>

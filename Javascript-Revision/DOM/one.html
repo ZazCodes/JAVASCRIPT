@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+        <ul class="language">
+            <li>Javascript</li>
+        </ul>
+   
+</body>
+<script>
+    let day = document.querySelector(".parent");
+    console.log(day);
+
+    // 1st method
+    console.log(day.children[0].innerHTML);
+    console.log(day.children[1].innerHTML);
+    console.log(day.children[2].innerHTML);
+    console.log(day.children[3].innerHTML);
+
+    // 2nd method
+    for(let i = 0; i < day.children.length; i++){
+        console.log(day.children[i].innerHTML)
+    }
+
+    // 3rd method
+    Array.from(day.children).forEach((element) => {
+        console.log(element.innerHTML);
+    });
+
+    // more playing with DOM
+    day.children[1].style.color = "red";
+
+    console.log(day.firstElementChild);
+    console.log(day.lastElementChild);
+
+    let Days = document.querySelector(".day");
+    console.log(Days.parentElement);
+    console.log(Days.nextElementSibling);
+
+    // Creating Elements
+    let adding = document.createElement("div");
+    console.log(adding);
+    adding.className = "bro";
+    adding.id = "2";
+    adding.setAttribute("title","creating div");
+    adding.style.border = "2px solid red";
+    adding.style.backgroundColor = "yellow";
+    adding.style.padding = "10px";
+    adding.innerHTML = "Chai aur code";
+    document.body.appendChild(adding);
+
+
+    // Adding li
+    // 1st Method
+    function add(lang){
+        let crt = document.createElement("li");
+        crt.innerHTML = `${lang}`;
+        document.querySelector(".language").appendChild(crt);
+    }
+    add("c++");
+    // 2nd Method (optimised Method)
+    function add2(lang){
+        let crt = document.createElement("li");
+        crt.appendChild(document.createTextNode(lang));
+        document.querySelector(".language").appendChild(crt);
+    }
+    add2("Java");
+
+    // Edit
+    // 1st Method
+    let ok = document.querySelector("li:nth-child(2)");
+    ok.innerHTML = "C#";
+    // 2nd Method
+    let bro = document.createElement("li");
+    bro.textContent = "Unity 3D Engine";
+    ok.replaceWith(bro); // C# replaced
+
+    // Remove
+    const lastok = document.querySelector("li:last-child");
+    lastok.remove(); // removed Unity 3D Engine
+
+</script>
+</html>

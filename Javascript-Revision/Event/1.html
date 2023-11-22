@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="all">
+        <li><img id="zuzu" src="suzuki.jpg" alt="" height="100px"></li>
+        <li><img id="toyo" src="toyota-corolla.jpg" alt="" height="100px"></li>
+        <li><img id="toyota" src="toyota.jpg" alt="" height="100px"></li>
+        <li><img id="wran" src="wrangler-jeep.jpg" alt="" height="100px"></li>
+        <li><a id="goog" href="https://google.com">Google</a></li>
+    </ul>
+
+</body>
+
+<script>
+    // clicking
+    document.getElementById("toyo").addEventListener("click", function(){
+    //    alert("clicked toyota");
+    });
+
+    // Mouse Events
+    document.getElementById('toyo').addEventListener('mouseover', function(event) {
+    // console.log('Mouse is over', event.target);
+    // console.log('Coming from', event.relatedTarget);
+});
+    document.getElementById('wran').addEventListener('mouseout', function(event) {
+    // console.log('Mouse is leaving', event.target);
+    // console.log('Heading to', event.relatedTarget);
+});
+
+// Mousemove Events
+document.addEventListener('mousemove', function(event) {
+    // console.clear(); // Clear console for better readability
+
+    // console.log('clientX:', event.clientX);
+    // console.log('clientY:', event.clientY);
+    // console.log('screenX:', event.screenX);
+    // console.log('screenY:', event.screenY);
+});
+
+// Different keys Pressed
+document.addEventListener('keydown', function(event) {
+    // console.clear(); // Clear console for better readability
+
+    // console.log('Alt Key:', event.altKey);
+    // console.log('Shift Key:', event.shiftKey);
+    // console.log('Ctrl Key:', event.ctrlKey);
+    // console.log('Key Code:', event.keyCode); // Deprecated, consider using event.key
+    // console.log('Key:', event.key); // Preferred way to get the key value
+});
+
+// The true/false --> bubbling and capturing Event
+    // Bubbling
+document.querySelector(".all").addEventListener("click", function(){
+    // console.log("clicked on ul");
+    // console.log("bubbling");
+}, false);
+document.querySelector("#wran").addEventListener("click", function(){
+    // console.log("Wrengler clicked");
+}, false);
+    // capturing
+document.querySelector(".all").addEventListener("click", function(){
+    // console.log("clicked on ul");
+}, true);
+document.getElementById("wran").addEventListener("click", function(){
+    // console.log("Wrengler clicked");
+    // console.log("capturing");
+}, true);
+
+// Bubbling --> when you want not to go upward
+    document.querySelector(".all").addEventListener("click", function(){
+    // console.log("clicked on ul");
+    // console.log("bubbling");
+}, false);
+document.getElementById("wran").addEventListener("click", function(e){
+    // console.log("Wrengler clicked");
+    // e.stopPropagation(); // stops here
+}, false);
+
+// Prevent Default
+document.querySelector("#goog").addEventListener("click", function(e){
+    // e.preventDefault();
+    // console.log("google clicked");
+}, false);   // default is also false
+
+// event.taret
+document.querySelector(".all").addEventListener("click", function(e){
+    // console.log(e.target);
+    // console.log(e.target.parentNode);
+
+    // for removing element
+    // let removeit = e.target.parentNode;
+    // removeit.remove();
+
+    // OR
+
+    // console.log(e.target.tagName);
+    // if (e.target.tagName === "IMG"){
+    //     console.log(e.target.id);
+    //     let removeit = e.target.parentNode;  
+    //     removeit.remove();
+    // }
+});
+
+</script>
+</html>

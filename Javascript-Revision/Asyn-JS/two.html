@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1>Chai aur JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="clear">Clear</button>
+</body>
+
+<script>
+    // setInterval
+
+    let heading = document.querySelector("h1");
+    let start = document.getElementById("start");
+    let stop = document.getElementById("stop");
+    let clearConsole = document.getElementById("clear");
+
+    let SayZAZ = function(value){
+        console.log(value, Date.now());
+    };
+    let time;
+
+    start.addEventListener("click", function(){
+        time = setInterval(SayZAZ, 1000,"zaz");
+    });
+
+    stop.addEventListener("click", function(){
+        clearInterval(time);
+    });
+
+    clearConsole.addEventListener("click", function(){
+        console.clear();
+    });
+
+</script>
+</html>
