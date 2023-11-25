@@ -11,4 +11,5 @@ function Even(a){
     }
     return arr;
 }
+
 console.log(Even(array));
