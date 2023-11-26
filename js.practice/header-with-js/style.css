@@ -7,7 +7,6 @@
 
 body{
     background-color: #453299;
-    user-select: none;
 }
 
 .header{
@@ -79,13 +78,19 @@ ul li a:hover::after{
     width: 100%;
 }
 
- .menu{
+ul li a:focus{
+    user-select: none;
+    outline: none;
+}
+
+.menu{
     display: none;
 }
 
 @media only screen and (max-width: 600px){
 
     body{
+        width: 100%;
         overflow: hidden;
     }
 
@@ -122,6 +127,10 @@ ul li a:hover::after{
         margin-bottom: 50px;
     }
 
+    ul li a:hover::after{
+        width: 0;
+    }
+
     .menu{
         display: block;
         color: white;
@@ -131,8 +140,7 @@ ul li a:hover::after{
         font-size: 22px;
         cursor: pointer;
     }
-}
-
-.nav{
-    transform: translate(0%);
+    .nav{
+        transform: translate(0%);
+    }
 }
