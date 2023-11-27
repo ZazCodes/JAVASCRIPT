@@ -89,7 +89,7 @@ ul li a:focus{
 
 @media only screen and (max-width: 600px){
     body{
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     .header{
         height: 65px;
@@ -112,7 +112,8 @@ ul li a:focus{
         justify-content: flex-start;
         padding-top: 30px;
         transform: translate(100vw);
-        transition: transform 0.5s ease;
+        transition: transform 0.5s ease;;
+        display: none;
     }
 
     ul{
@@ -140,5 +141,6 @@ ul li a:focus{
     
     .nav{
         transform: translate(0);
+        display: block;
     }
 }
